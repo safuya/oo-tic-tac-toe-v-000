@@ -49,4 +49,15 @@ class TicTacToe
     "O"
   end
 
+  def turn
+    puts "Please enter 1-9:"
+    index = input_to_index(gets)
+    while !valid_move?(index)
+      puts "Invalid move. Please enter 1-9:"
+      index = input_to_index(gets)
+    end
+    move(index, current_player)
+    display_board
+  end
+
 end
