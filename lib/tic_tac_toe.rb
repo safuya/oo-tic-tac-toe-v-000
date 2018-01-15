@@ -60,4 +60,19 @@ class TicTacToe
     display_board
   end
 
+  def won?
+    WIN_COMBINATIONS.each do |win|
+      x_won = [@board[win[0]], @board[win[1]], @board[win[2]]].all? do |i|
+        i == "X"
+      end
+      o_won = [@board[win[0]], @board[win[1]], @board[win[2]]].all? do |i|
+        i == "O"
+      end
+      if x_won || o_won
+        return win
+      end
+    end
+    false
+  end
+
 end
