@@ -105,10 +105,10 @@ class TicTacToe
   end
 
   def play
-    until over?(board) do
-      turn(board)
+    until over? do
+      turn
     end
-    if winner(board)
+    if winner
       puts "Congratulations #{winner(board)}!"
     else
       puts "Cat's Game!"
